@@ -1,0 +1,39 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+ Registration
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <h4>Registration</h4>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+        <form method="post" action="{% url 'registration' %}" class="form-group form-block">
+            {% csrf_token %}
+            {% if error %}
+            <div class="alert alert-danger" id="msg">
+                {{ error }}
+            </div>
+            {% endif %}
+            <div>
+                <label>Enter User Name: </label>
+                <input type="text" name="txtusername" class="form-control">
+            </div>
+            <div>
+                <label>Enter Email: </label>
+                <input type="text" name="txtemail" class="form-control">
+            </div>
+            <div>
+                <label>Enter Password: </label>
+                <input type="text" name="txtpassword" class="form-control">
+            </div>
+            <div class="mt-4">
+                <input type="submit" name="btnsubmit" class="btn btn-block btn-outline-dark" value="Register">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'Base.html' %}
+{% block title %}
+Vote
+{% endblock %}
+{% block content %}
+
+ <div class="container mt-5">
+          <div class="box">
+              <p style="font-size: 20px;">{{ que.question }}</p>
+              <br>
+              <form method="post" action="{% url 'vote' %}">
+                  {% csrf_token %}
+                {% for i in choice %}
+                   <input type="radio" name="rdchoice" value="{{ i.id }}">
+                    {{ i.choice }}
+                    <br>
+                {% endfor %}
+
+                 <input type="submit" value="vote" class="btn btn-outline-primary mt-4">
+              </form>
+
+          </div>
+  </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'Base.html' %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+
+  <div class="container mt-5">
+          <div class="jumbotron">
+              <h5 align="center">Start Poll Here</h5>
+              <div class="d-flex justify-content-center">
+                  <a href="{% url 'poll_question' %}" class="btn btn-outline-info">Start Poll</a>
+              </div>
+          </div>
+  </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'Base.html' %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+
+
+
+  <div class="container mt-5">
+      {% if que %}
+        {% for i in que %}
+          <div class="box mt-4 mb-4">
+              <p style="font-size: 20px;">{{ i.question }}</p>
+              <br>
+              <a href="{% url 'vote_now' i.slug %}" class="btn btn-outline-primary">Vote now</a>
+              <a href="{% url 'result' i.id %}" class="btn btn-outline-dark">Result</a>
+          </div>
+        {% endfor %}
+      {% endif %}
+  </div>
+
+
+
+{% endblock %}

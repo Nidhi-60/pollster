@@ -1,0 +1,20 @@
+{% extends 'Base.html' %}
+{% block title %}
+Result
+{% endblock %}
+{% block content %}
+
+ <div class="container mt-5">
+          <div class="box">
+              <p style="font-size: 20px;">{{ question }}</p>
+              {% for i in que %}
+              <p style="font-size:15px">
+                  {{ i.choice }}  &nbsp;&nbsp;<span class="badge badge-info">{{ i.votes }}</span>
+              </p>
+              {% endfor %}
+          </div>
+  </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+.form-block {
+    width: 300px;
+}
+
+.box {
+    width: auto;
+    padding: 15px;
+    background-color: #E2E9EC;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
